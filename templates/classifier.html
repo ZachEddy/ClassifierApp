@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/classifier.css' %}"/>
+<link href="{% static 'css/cropper.css' %}" rel="stylesheet">
+<script src="{% static 'js/cropper.js' %}"></script>
+<script src="{% static 'js/canvas-to-blob.js' %}"></script>
+<script src="{% static 'js/crsf_token.js' %}"></script>
+
+
+<div class="container">
+	<h1>Image Classifier</h1>
+	<div>
+  	<!-- <img id="image" src="http://i.imgur.com/u4Xhe5P.jpg"> -->
+  	
+<script>
+	var cropper
+	var loadFile = function(event) {
+		var reader = new FileReader();
+		reader.onload = function() {
+			var output = document.getElementById('output');
+			output.src = reader.result;
+			makeCropper()
+		};
+		reader.readAsDataURL(event.target.files[0]);
+	};
+
+	var makeCropper = function() {
+		image = document.getElementById('output');
+		cropper = new Cropper(image, {
+			aspectRatio: 1 / 1,
+			zoomable: false,
+			minCropBoxWidth: 32,
+			minCropBoxHeight: 32,
+			viewMode:3,
+			crop: function(e) {
+				console.log(e.detail.x);
+				console.log(e.detail.y);
+				console.log(e.detail.width);
+				console.log(e.detail.height);
+				console.log(e.detail.rotate);
+				console.log(e.detail.scaleX);
+				console.log(e.detail.scaleY);
+			}
+		});
+		cropper.zoomTo(1);
+	};
+
+$(function() {
+	var classify = function(event) {
+		console.log("Fuck")
+		
+		cropper.getCroppedCanvas({width: 32, height: 32}).toBlob(function (blob) {
+			var formData = new FormData();
+			formData.append('croppedImage', blob);
+			$.ajax('', {
+				method: "POST",
+				data: formData,
+				processData: false,
+				contentType: false,
+				success: function (data) {
+					debugger
+
+					console.log(data);
+				},
+				error: function () {
+					console.log('Upload error');
+				}
+			});
+		});
+	}
+
+	// button listener
+	$(".classify").on("click",classify)
+});
+</script>
+
+	<img id="output"/>
+	<input type="file" accept="image/*" onchange="loadFile(event)" id = "thingy">
+	</div>
+
+
+	<button class="classify">Classify</button>
+</div>
+
+{% endblock content %}
