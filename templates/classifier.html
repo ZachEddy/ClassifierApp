@@ -7,13 +7,14 @@
 <script src="{% static 'js/cropper.js' %}"></script>
 <script src="{% static 'js/canvas-to-blob.js' %}"></script>
 <script src="{% static 'js/crsf_token.js' %}"></script>
+<script src="{% static 'js/image_upload.js' %}"></script>
 
 
 <div class="container">
 	<h1>Image Classifier</h1>
 	<div>
   	<!-- <img id="image" src="http://i.imgur.com/u4Xhe5P.jpg"> -->
-  	
+<!--   	
 <script>
 	var cropper
 	var loadFile = function(event) {
@@ -71,11 +72,10 @@ $(function() {
 		});
 	}
 
-	// button listener
 	$(".classify").on("click",classify)
 });
 </script>
-
+ -->
 	<img id="output"/>
 	<input type="file" accept="image/*" onchange="loadFile(event)" id = "thingy">
 	</div>
