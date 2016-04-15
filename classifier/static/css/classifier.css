@@ -1,6 +1,129 @@
+h1, h2, h3, .categories, .graph_container
+{
+	text-align: center;
+	color: black;
+}
+
 h1
 {
-	/*hey, this file works*/
+	font-family: 'Helvetica Neue', sans-serif; font-size: 60px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center;
+}
+
+h2
+{
+	font-size: 30px;
+}
+
+.graph_container
+{
+	width: 75%;
+	height: 250px;
+  margin: 0 auto; 
+}
+
+.btn
+{
+	width: 30%;
+	background-image: linear-gradient(to bottom,#fff 0,#C2E5F2 100%);
+	border-color: #9E9E9E;
+}
+
+.btn:hover, .btn:focus
+{
+  background-color: #C2E5F2;
+  border-color: #9E9E9E;
+}
+.graph
+{
+	/*width: 100%;*/
+	/*text-align:center;*/
+}
+canvas
+{
+	/*padding-left: 0;
+  padding-right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;*/
+}
+
+h3
+{
+	font-size: 25px;
+}
+
+.categories
+{
+	font-size: 18px;
+	word-spacing: 15px;
+}
+
+body
+{
+	/*http://wallpapers-and-backgrounds.net/wp-content/uploads/2016/01/blur-background_1.jpg*/
+	/*https://appraw.com/static/previews/downloads/d/m/o/p-blue-triangles-mOZ4IbJO7u-1.jpg*/
+	/*http://cdn.paper4pc.com/images/polygon-wallpaper-3.jpg*/
+	/*http://wallpapershome.com/images/pages/pic_h/3518.jpg*/
+	/*http://www.gstudio.org.uk/wp-content/uploads/2015/12/Seamless-Polygon-Backgrounds-Vol23.jpg?id=731*/
+	/*http://wallpapershome.com/images/pages/pic_h/3522.jpg*/
+	/*background-image: url("http://www.gstudio.org.uk/wp-content/uploads/2015/12/Seamless-Polygon-Backgrounds-Vol23.jpg?id=731");*/
+	/*https://pixabay.com/static/uploads/photo/2015/12/17/13/44/pattern-1097338_960_720.jpg*/
+	/*background-image: url("http://svejer.com/im11/abstract-polygon-background.png");*/
+	background-image: url("http://www.ilikewallpaper.net/ipad-air-wallpapers/download/20413/Polygon-Surface-ipad-air-wallpaper-ilikewallpaper_com.jpg");
+}
+
+.upload, .classify
+{
+	text-align: center;
+}
+.classify
+{
+
+}
+
+.container
+{
+	background-color: #E6E7E8;
+	height: 100%;
+	/*height:auto; */
+	overflow:auto;
+  border-left: 3px solid black;
+  border-right: 3px solid black;
+  padding-bottom: 200px;
+}
+
+/*.classify
+{
+	text-align: center;
+}*/
+
+.send_data
+{
+
+}
+
+.output
+{
+	/*background-color: black;*/
+	text-align: center;
+	width: 80%;
+	margin: 0 auto; 
+}
+
+.inputfile
+{
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+hr
+{
+	border-top: 1px solid #666869;
+	width: 75%;
 }
 
 img
